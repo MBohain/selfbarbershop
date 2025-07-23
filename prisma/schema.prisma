@@ -1,0 +1,221 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  role      Role     @default(CUSTOMER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orders    Order[]
+  cart      CartItem[]
+  favorites Favorite[]
+
+  @@map("users")
+}
+
+model Category {
+  id          String @id @default(cuid())
+  name        String @unique
+  slug        String @unique
+  description String?
+  image       String?
+
+  products Product[]
+
+  @@map("categories")
+}
+
+model Product {
+  id              String  @id @default(cuid())
+  name            String
+  description     String?
+  price           Float
+  originalPrice   Float?
+  image           String?
+  images          String? // JSON string of image URLs
+  rating          Float    @default(0)
+  reviewCount     Int      @default(0)
+  featured        Boolean  @default(false)
+  bestseller      Boolean  @default(false)
+  inStock         Boolean  @default(true)
+  stockQuantity   Int      @default(0)
+  
+  // Nouveaux champs pour la gestion admin
+  isActive        Boolean  @default(true)
+  isFeatured      Boolean  @default(false)
+  featuredOrder   Int?     // Ordre d'affichage pour les produits populaires (1, 2, 3)
+  
+  // AliExpress Integration
+  aliexpressId    String   @unique
+  aliexpressPrice Float
+  aliexpressUrl   String?
+  
+  // Product specifications
+  features        String? // JSON string of features array
+  specifications  Json?    // Flexible specifications
+  
+  categoryId      String
+  category        Category @relation(fields: [categoryId], references: [id])
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  orderItems      OrderItem[]
+  cartItems       CartItem[]
+  favorites       Favorite[]
+
+  @@map("products")
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  orderNumber     String      @unique
+  status          OrderStatus @default(PENDING)
+  
+  // Customer info
+  userId          String
+  user            User        @relation(fields: [userId], references: [id])
+  
+  // Shipping info
+  shippingAddress Json
+  billingAddress  Json?
+  
+  // Pricing
+  subtotal        Float
+  shipping        Float       @default(0)
+  tax             Float       @default(0)
+  total           Float
+  
+  // Payment
+  paymentMethod   String?
+  paymentStatus   PaymentStatus @default(PENDING)
+  stripeSessionId String?
+  
+  // AliExpress automation
+  aliexpressOrders Json? // Store AliExpress order details
+  
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  
+  orderItems      OrderItem[]
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id              String  @id @default(cuid())
+  quantity        Int
+  price           Float   // Price at time of order
+  
+  productId       String
+  product         Product @relation(fields: [productId], references: [id])
+  
+  orderId         String
+  order           Order   @relation(fields: [orderId], references: [id])
+  
+  // AliExpress tracking
+  aliexpressOrderId String?
+  trackingNumber    String?
+  
+  @@map("order_items")
+}
+
+model CartItem {
+  id        String  @id @default(cuid())
+  quantity  Int
+  
+  userId    String
+  user      User    @relation(fields: [userId], references: [id])
+  
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  
+  createdAt DateTime @default(now())
+  
+  @@unique([userId, productId])
+  @@map("cart_items")
+}
+
+model Favorite {
+  id        String  @id @default(cuid())
+  
+  userId    String
+  user      User    @relation(fields: [userId], references: [id])
+  
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  
+  createdAt DateTime @default(now())
+  
+  @@unique([userId, productId])
+  @@map("favorites")
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+model Settings {
+  id                String   @id @default(cuid())
+  key               String   @unique
+  value             String
+  description       String?
+  updatedAt         DateTime @updatedAt
+  updatedBy         String?
+  
+  @@map("settings")
+}
+
+// Nouvelles tables pour les statistiques
+model VisitorLog {
+  id        String   @id @default(cuid())
+  ip        String
+  userAgent String?
+  page      String
+  createdAt DateTime @default(now())
+
+  @@map("visitor_logs")
+}
+
+model SalesStat {
+  id              String   @id @default(cuid())
+  date            DateTime
+  totalSales      Float    @default(0)
+  totalOrders     Int      @default(0)
+  totalProfit     Float    @default(0)
+  uniqueVisitors  Int      @default(0)
+  conversionRate  Float    @default(0)
+  
+  @@unique([date])
+  @@map("sales_stats")
+}
