@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       clientSecret: paymentIntent.client_secret,
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Erreur création PaymentIntent:', error);
     return NextResponse.json(
       { error: error.message || 'Erreur lors de la création du paiement' },

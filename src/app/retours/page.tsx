@@ -123,7 +123,7 @@ export default function RetoursPage() {
           </h2>
           
           <div className="space-y-6">
-            {returnProcess.map((step, index) => (
+            {returnProcess.map((step) => (
               <div key={step.step} className="flex items-start">
                 <div className="flex-shrink-0">
                   <div className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full font-bold">

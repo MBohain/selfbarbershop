@@ -61,7 +61,7 @@ class AliExpressService {
           error: 'AliExpress order failed - product out of stock'
         };
       }
-    } catch (error) {
+    } catch {
       console.error('AliExpress API error:', error);
       return {
         success: false,
@@ -83,7 +83,7 @@ class AliExpressService {
         trackingNumber: `TN${Date.now()}`,
         trackingUrl: `https://aliexpress.com/tracking/${aliexpressOrderId}`
       };
-    } catch (error) {
+    } catch {
       return {
         success: false,
         error: 'Failed to get order status'
@@ -101,7 +101,7 @@ class AliExpressService {
         success: true,
         refundAmount: 0 // Amount to be refunded
       };
-    } catch (error) {
+    } catch {
       return {
         success: false,
         error: 'Failed to cancel order'

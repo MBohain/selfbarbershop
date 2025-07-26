@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     const skip = (pageNumber - 1) * pageSize;
 
     // Build where clause
-    const where: any = {};
+    const where: unknown = {};
     
     if (category && category !== 'all') {
       where.category = {
@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Build order clause
-    let orderBy: any = {};
+    let orderBy: unknown = {};
     switch (sort) {
       case 'price_asc':
         orderBy = { price: 'asc' };

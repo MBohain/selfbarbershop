@@ -7,14 +7,14 @@ interface Notification {
   id: string;
   type: 'success' | 'error';
   message: string;
-  product?: any;
+  product?: unknown;
 }
 
 export default function CartNotifications() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
   useEffect(() => {
-    const handleCartAdded = (event: any) => {
+    const handleCartAdded = (event: unknown) => {
       const { message, product } = event.detail;
       const notification: Notification = {
         id: Date.now().toString(),
@@ -31,7 +31,7 @@ export default function CartNotifications() {
       }, 5000);
     };
 
-    const handleCartError = (event: any) => {
+    const handleCartError = (event: unknown) => {
       const { message } = event.detail;
       const notification: Notification = {
         id: Date.now().toString(),

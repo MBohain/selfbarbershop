@@ -22,7 +22,7 @@ function verifyAdmin(request: Request) {
     }
     
     return decoded;
-  } catch (error) {
+  } catch {
     throw new Error('Token invalide');
   }
 }
@@ -46,7 +46,7 @@ export async function DELETE(
       message: 'Produit supprimé avec succès'
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error deleting product:', error);
     
     if (error.message === 'Token manquant' || error.message === 'Token invalide' || error.message === 'Accès non autorisé') {

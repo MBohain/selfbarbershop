@@ -49,7 +49,7 @@ export default function AdminDashboard() {
     try {
       const payload = JSON.parse(atob(token.split('.')[1]));
       setUser(payload);
-    } catch (error) {
+    } catch {
       localStorage.removeItem('adminToken');
       router.push('/login');
       return;

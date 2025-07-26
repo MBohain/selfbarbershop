@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { loadStripe } from '@stripe/stripe-js';
 import {
   Elements,
@@ -119,8 +120,8 @@ function CheckoutForm() {
         await clearCart();
       }
 
-    } catch (error: any) {
-      setError(error.message || 'Une erreur est survenue lors du paiement');
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'Une erreur est survenue lors du paiement');
     } finally {
       setIsLoading(false);
     }
@@ -142,12 +143,12 @@ function CheckoutForm() {
               Votre commande a été traitée avec succès. Vous recevrez bientôt un email de confirmation.
             </p>
             <div className="space-y-4">
-              <a
+              <Link
                 href="/"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
               >
-                Retour à l'accueil
-              </a>
+                Retour à l&apos;accueil
+              </Link>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { StarIcon } from '@heroicons/react/24/solid';
-import { HeartIcon, ShoppingCartIcon, FunnelIcon } from '@heroicons/react/24/outline';
+import { HeartIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 
 interface Product {
   id: string;

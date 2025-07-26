@@ -38,7 +38,7 @@ export default function LoginPage() {
       
       // Rediriger vers le dashboard admin
       router.push('/admin/dashboard');
-    } catch (error: any) {
+    } catch (error: unknown) {
       setError(error.message);
     } finally {
       setLoading(false);
