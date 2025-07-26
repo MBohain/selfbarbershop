@@ -1,3 +1,4 @@
+import Image from 'next/image';
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -13,9 +14,9 @@ interface Product {
   category: {
     name: string;
   };
-  isFeatured: boolean;
-  featuredOrder: number | null;
-  isActive: boolean;
+  isFeatured?: boolean;
+  featuredOrder?: number | null;
+  isActive?: boolean;
 }
 
 export default function FeaturedProductsAdmin() {
@@ -33,9 +34,9 @@ export default function FeaturedProductsAdmin() {
       const response = await fetch('/api/admin/products');
       const data = await response.json();
       if (data.success) {
-        const allProducts = data.products.map((product: any) => ({
+        const allProducts = data.products.map((product: { id: string; name: string; price: number; originalPrice: number; images: string | string[]; category: { name: string; }; }) => ({
           ...product,
-          images: product.images ? JSON.parse(product.images) : []
+          images: typeof product.images === 'string' ? JSON.parse(product.images) : product.images || []
         }));
         setProducts(allProducts);
         
@@ -113,7 +114,7 @@ export default function FeaturedProductsAdmin() {
       <div className="bg-white shadow-lg rounded-lg p-6">
         <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
           <StarIcon className="h-5 w-5 text-yellow-500 mr-2" />
-          Produits Populaires sur l'Accueil ({featuredProducts.length}/3)
+          Produits Populaires sur l&apos;Accueil ({featuredProducts.length}/3)
         </h2>
 
         {featuredProducts.length === 0 ? (
@@ -214,7 +215,7 @@ export default function FeaturedProductsAdmin() {
       <div className="bg-white shadow-lg rounded-lg p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <EyeIcon className="h-5 w-5 text-gray-500 mr-2" />
-          Aperçu sur l'Accueil
+          Aperçu sur l&apos;Accueil
         </h3>
         <div className="bg-gray-50 rounded-lg p-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

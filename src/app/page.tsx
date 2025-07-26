@@ -57,7 +57,7 @@ export default function HomePage() {
         if (data.success) {
           setFeaturedProducts(data.products);
         }
-      } catch (error) {
+      } catch (error: unknown) {
         console.error('Erreur chargement produits populaires:', error);
       } finally {
         setIsLoading(false);
