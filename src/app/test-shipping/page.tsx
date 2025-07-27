@@ -55,10 +55,9 @@ export default function TestShipping() {
                   </span>
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                     amount >= 60 
-                      ? &apos;bg-green-100 text-green-800&apos; 
-                      : &apos;bg-orange-100 text-orange-800&apos;
+                      ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'
                   }`}>
-                    {amount >= 60 ? &apos;Livraison Gratuite&apos; : &apos;Frais de Livraison&apos;}
+                    {amount >= 60 ? 'Livraison Gratuite' : 'Frais de Livraison'}
                   </span>
                 </div>
                 

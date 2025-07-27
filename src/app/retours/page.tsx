@@ -8,48 +8,48 @@ import {
 
 const returnReasons = [
   {
-    title: &apos;Produit défectueux&apos;,
-    description: &apos;Remboursement complet sans retour requis&apos;,
+    title: 'Produit défectueux',
+    description: 'Remboursement complet sans retour requis',
     icon: ExclamationTriangleIcon,
-    action: &apos;Remboursement immédiat&apos;,
-    timeframe: &apos;2-3 jours ouvrés&apos;
+    action: 'Remboursement immédiat',
+    timeframe: '2-3 jours ouvrés'
   },
   {
-    title: &apos;Produit non conforme&apos;,
-    description: &apos;Ne correspond pas à la description&apos;,
+    title: 'Produit non conforme',
+    description: 'Ne correspond pas à la description',
     icon: ShieldCheckIcon,
-    action: &apos;Remboursement ou échange&apos;,
-    timeframe: &apos;5-7 jours ouvrés&apos;
+    action: 'Remboursement ou échange',
+    timeframe: '5-7 jours ouvrés'
   },
   {
-    title: &apos;Changement d\&apos;avis&apos;,
-    description: &apos;Retour possible sous conditions&apos;,
+    title: 'Changement d\'avis&apos;,
+    description: 'Retour possible sous conditions',
     icon: ArrowPathIcon,
-    action: &apos;Retour à vos frais&apos;,
-    timeframe: &apos;10-14 jours ouvrés&apos;
+    action: 'Retour à vos frais',
+    timeframe: '10-14 jours ouvrés'
   }
 ];
 
 const returnProcess = [
   {
     step: 1,
-    title: &apos;Contactez-nous&apos;,
-    description: &apos;Envoyez un email avec votre numéro de commande et photos si produit défectueux&apos;
+    title: 'Contactez-nous',
+    description: 'Envoyez un email avec votre numéro de commande et photos si produit défectueux'
   },
   {
     step: 2,
-    title: &apos;Évaluation&apos;,
-    description: &apos;Notre équipe évalue votre demande sous 24h&apos;
+    title: 'Évaluation',
+    description: 'Notre équipe évalue votre demande sous 24h'
   },
   {
     step: 3,
-    title: &apos;Solution proposée&apos;,
-    description: &apos;Remboursement, échange ou retour selon le cas&apos;
+    title: 'Solution proposée',
+    description: 'Remboursement, échange ou retour selon le cas'
   },
   {
     step: 4,
-    title: &apos;Remboursement&apos;,
-    description: &apos;Crédit sur votre méthode de paiement originale&apos;
+    title: 'Remboursement',
+    description: 'Crédit sur votre méthode de paiement originale'
   }
 ];
 
@@ -174,7 +174,7 @@ export default function RetoursPage() {
               </h3>
               <p className="text-gray-600">
                 30 jours à compter de la réception pour signaler un problème. 
-                Les retours pour changement d&apos;avis sont acceptés sous 14 jours.
+                Les retours pour changement d'avis sont acceptés sous 14 jours.
               </p>
             </div>
 
@@ -185,7 +185,7 @@ export default function RetoursPage() {
               <p className="text-gray-600">
                 - Produit défectueux : <strong>Frais gratuits</strong><br />
                 - Erreur de notre part : <strong>Frais gratuits</strong><br />
-                - Changement d&apos;avis : <strong>À votre charge</strong>
+                - Changement d'avis : <strong>À votre charge</strong>
               </p>
             </div>
 

@@ -43,18 +43,18 @@ interface Product {
 
 const selfCutTips = [
   {
-    title: &apos;Commencez avec un miroir de qualité&apos;,
-    description: &apos;Un bon miroir 3 faces est essentiel pour voir tous les angles&apos;,
+    title: 'Commencez avec un miroir de qualité',
+    description: 'Un bon miroir 3 faces est essentiel pour voir tous les angles',
     icon: ScissorsIcon
   },
   {
-    title: &apos;Investissez dans un kit complet&apos;,
-    description: &apos;Un kit professionnel vous donne tous les outils nécessaires&apos;,
+    title: 'Investissez dans un kit complet',
+    description: 'Un kit professionnel vous donne tous les outils nécessaires',
     icon: UserIcon
   },
   {
-    title: &apos;Apprenez les techniques&apos;,
-    description: &apos;Notre guide exclusif vous enseigne les secrets des barbiers&apos;,
+    title: 'Apprenez les techniques',
+    description: 'Notre guide exclusif vous enseigne les secrets des barbiers',
     icon: AcademicCapIcon
   }
 ];
@@ -65,7 +65,7 @@ export default function SelfCutPage() {
   const [error, setError] = useState<string | null>(null);
   const [showGuideModal, setShowGuideModal] = useState(false);
   const [guideInfo] = useState({
-    title: &apos;Guide Self-Cut Premium&apos;,
+    title: 'Guide Self-Cut Premium',
     price: 29,
     originalPrice: 79,
     discount: 63,
@@ -79,16 +79,16 @@ export default function SelfCutPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(&apos;/api/products?category=self-cut&apos;);
+        const response = await fetch('/api/products?category=self-cut');
         if (response.ok) {
           const data = await response.json();
           setProducts(data.products || []);
         } else {
-          setError(&apos;Erreur lors du chargement des produits&apos;);
+          setError('Erreur lors du chargement des produits');
         }
       } catch (err) {
-        setError(&apos;Erreur de connexion&apos;);
-        console.error(&apos;Erreur fetch produits:&apos;, err);
+        setError('Erreur de connexion');
+        console.error('Erreur fetch produits:', err);
       } finally {
         setLoading(false);
       }
@@ -224,7 +224,7 @@ export default function SelfCutPage() {
                   <div key={product.id} className=&quot;bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300&quot;>
                     <div className=&quot;relative&quot;>
                       <img
-                        src={product.image || &apos;/placeholder-product.jpg&apos;}
+                        src={product.image || '/placeholder-product.jpg'}
                         alt={product.name}
                         className=&quot;w-full h-48 object-cover&quot;
                       />
@@ -259,7 +259,7 @@ export default function SelfCutPage() {
                             <StarIcon
                               key={i}
                               className={`h-4 w-4 ${
-                                i < Math.floor(product.rating) ? &apos;text-yellow-400&apos; : &apos;text-gray-300&apos;
+                                i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'
                               }`}
                             />
                           ))}
@@ -478,7 +478,7 @@ export default function SelfCutPage() {
                         <StarIcon key={i} className=&quot;h-5 w-5 text-yellow-400&quot; />
                       ))}
                     </div>
-                    <p className=&quot;text-sm text-white mb-3 font-medium&quot;>&quot;Incroyable ! J&apos;ai économisé des centaines d&apos;euros chez le coiffeur grâce à ce guide.&quot;</p>
+                    <p className=&quot;text-sm text-white mb-3 font-medium&quot;>&quot;Incroyable ! J'ai économisé des centaines d'euros chez le coiffeur grâce à ce guide.&quot;</p>
                     <div className=&quot;text-xs text-gray-100 font-semibold&quot;>- Marc L., Paris</div>
                   </div>
                   <div className=&quot;bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-sm border border-white border-opacity-30 shadow-lg&quot;>

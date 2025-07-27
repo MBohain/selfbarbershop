@@ -8,18 +8,18 @@ import {
 
 const shippingOptions = [
   {
-    name: &apos;Livraison Standard&apos;,
-    time: &apos;15-25 jours ouvrés&apos;,
-    price: &apos;Gratuite&apos;,
-    description: &apos;Suivi complet de votre commande&apos;,
+    name: 'Livraison Standard',
+    time: '15-25 jours ouvrés',
+    price: 'Gratuite',
+    description: 'Suivi complet de votre commande',
     icon: TruckIcon,
     popular: true
   },
   {
-    name: &apos;Livraison Express&apos;,
-    time: &apos;8-15 jours ouvrés&apos;,
-    price: &apos;9.99€&apos;,
-    description: &apos;Traitement prioritaire&apos;,
+    name: 'Livraison Express',
+    time: '8-15 jours ouvrés',
+    price: '9.99€',
+    description: 'Traitement prioritaire',
     icon: ClockIcon,
     popular: false
   }
@@ -28,33 +28,33 @@ const shippingOptions = [
 const shippingSteps = [
   {
     step: 1,
-    title: &apos;Commande validée&apos;,
-    description: &apos;Votre commande est confirmée et le paiement traité&apos;,
-    time: &apos;Immédiat&apos;
+    title: 'Commande validée',
+    description: 'Votre commande est confirmée et le paiement traité',
+    time: 'Immédiat'
   },
   {
     step: 2,
-    title: &apos;Préparation&apos;,
-    description: &apos;Votre commande est préparée par nos fournisseurs&apos;,
-    time: &apos;2-3 jours&apos;
+    title: 'Préparation',
+    description: 'Votre commande est préparée par nos fournisseurs',
+    time: '2-3 jours'
   },
   {
     step: 3,
-    title: &apos;Expédition&apos;,
-    description: &apos;Votre colis est expédié et vous recevez le numéro de suivi&apos;,
-    time: &apos;3-5 jours&apos;
+    title: 'Expédition',
+    description: 'Votre colis est expédié et vous recevez le numéro de suivi',
+    time: '3-5 jours'
   },
   {
     step: 4,
-    title: &apos;En transit&apos;,
-    description: &apos;Votre colis voyage vers votre adresse&apos;,
-    time: &apos;10-20 jours&apos;
+    title: 'En transit',
+    description: 'Votre colis voyage vers votre adresse',
+    time: '10-20 jours'
   },
   {
     step: 5,
-    title: &apos;Livraison&apos;,
-    description: &apos;Réception de votre commande à domicile&apos;,
-    time: &apos;Final&apos;
+    title: 'Livraison',
+    description: 'Réception de votre commande à domicile',
+    time: 'Final'
   }
 ];
 
@@ -79,7 +79,7 @@ export default function LivraisonPage() {
             <div 
               key={option.name} 
               className={`relative bg-white p-6 rounded-lg shadow-md ${
-                option.popular ? &apos;ring-2 ring-blue-500&apos; : &apos;&apos;
+                option.popular ? 'ring-2 ring-blue-500' : ''
               }`}
             >
               {option.popular && (
@@ -175,7 +175,7 @@ export default function LivraisonPage() {
               <p className="text-gray-600">
                 Nos produits sont soigneusement sélectionnés auprès de fournisseurs internationaux 
                 pour vous garantir le meilleur rapport qualité-prix. Les délais incluent la préparation, 
-                l&apos;expédition et le transport international.
+                l'expédition et le transport international.
               </p>
             </div>
 
@@ -184,17 +184,17 @@ export default function LivraisonPage() {
                 Puis-je suivre ma commande ?
               </h3>
               <p className="text-gray-600">
-                Oui ! Dès l&apos;expédition, vous recevez un numéro de suivi par email pour 
-                suivre votre colis en temps réel jusqu&apos;à la livraison.
+                Oui ! Dès l'expédition, vous recevez un numéro de suivi par email pour 
+                suivre votre colis en temps réel jusqu'à la livraison.
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Que faire si mon colis n&apos;arrive pas ?
+                Que faire si mon colis n'arrive pas ?
               </h3>
               <p className="text-gray-600">
-                Si votre commande n&apos;arrive pas dans les délais indiqués, contactez-nous. 
+                Si votre commande n'arrive pas dans les délais indiqués, contactez-nous. 
                 Nous lançons immédiatement une enquête et vous proposons un renvoi ou un remboursement.
               </p>
             </div>
@@ -204,7 +204,7 @@ export default function LivraisonPage() {
                 Y a-t-il des frais de douane ?
               </h3>
               <p className="text-gray-600">
-                Pour la France métropolitaine, aucun frais de douane n&apos;est appliqué. 
+                Pour la France métropolitaine, aucun frais de douane n'est appliqué. 
                 Nos prix sont déjà optimisés pour inclure tous les coûts.
               </p>
             </div>

@@ -8,22 +8,22 @@ import {
 
 const paymentMethods = [
   {
-    name: &apos;Cartes de Crédit/Débit&apos;,
-    description: &apos;Visa, Mastercard, American Express acceptées&apos;,
+    name: 'Cartes de Crédit/Débit',
+    description: 'Visa, Mastercard, American Express acceptées',
     icon: CreditCardIcon,
-    security: &apos;Chiffrement SSL 256-bit&apos;
+    security: 'Chiffrement SSL 256-bit'
   },
   {
-    name: &apos;Paiement Sécurisé&apos;,
-    description: &apos;Powered by Stripe - Leader mondial des paiements en ligne&apos;,
+    name: 'Paiement Sécurisé',
+    description: 'Powered by Stripe - Leader mondial des paiements en ligne',
     icon: ShieldCheckIcon,
-    security: &apos;Conforme PCI DSS&apos;
+    security: 'Conforme PCI DSS'
   },
   {
-    name: &apos;Traitement Immédiat&apos;,
-    description: &apos;Votre commande est traitée dès validation du paiement&apos;,
+    name: 'Traitement Immédiat',
+    description: 'Votre commande est traitée dès validation du paiement',
     icon: ClockIcon,
-    security: &apos;Confirmation instantanée&apos;
+    security: 'Confirmation instantanée'
   }
 ];
 
