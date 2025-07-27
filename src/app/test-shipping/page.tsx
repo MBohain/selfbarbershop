@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import ShippingCalculator from '@/components/ShippingCalculator';
 
 export default function TestShipping() {
@@ -99,6 +100,8 @@ export default function TestShipping() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

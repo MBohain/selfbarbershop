@@ -10,6 +10,7 @@ import {
   useElements
 } from '@stripe/react-stripe-js';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { useCart } from '@/contexts/CartContext';
 import { LockClosedIcon } from '@heroicons/react/24/outline';
 
@@ -254,6 +255,8 @@ function CheckoutForm() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
@@ -277,6 +280,7 @@ export default function CheckoutPage() {
             <p className="text-gray-600">Redirection vers le panier...</p>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

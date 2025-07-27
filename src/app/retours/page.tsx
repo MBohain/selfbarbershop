@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { 
   ArrowPathIcon, 
   ShieldCheckIcon, 
@@ -256,6 +257,8 @@ export default function RetoursPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

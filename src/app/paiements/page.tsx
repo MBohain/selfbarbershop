@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { 
   CreditCardIcon, 
   ShieldCheckIcon, 
@@ -144,6 +145,8 @@ export default function PaiementsPage() {
           </a>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { HeartIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
@@ -233,6 +234,8 @@ export default function TondeusesPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }
