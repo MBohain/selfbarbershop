@@ -15,7 +15,7 @@ function verifyAdmin(request: Request) {
   const token = authHeader.substring(7);
   
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key') as any;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key') as { role: string };
     
     if (decoded.role !== 'ADMIN') {
       throw new Error('Accès non autorisé');

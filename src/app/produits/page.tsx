@@ -212,7 +212,7 @@ export default function ProduitsPage() {
               const discount = product.originalPrice 
                 ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
                 : 0;
-              const features = product.features ? JSON.parse(product.features) : [];
+              // const features = product.features ? JSON.parse(product.features) : [];
               
               return (
                 <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">

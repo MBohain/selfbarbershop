@@ -11,7 +11,7 @@ function verifyAdminToken(request: NextRequest) {
 
   const token = authHeader.substring(7);
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as any;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { role: string; email: string };
     return decoded.role === 'ADMIN' ? decoded : null;
   } catch {
     return null;

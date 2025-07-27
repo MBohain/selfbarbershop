@@ -179,7 +179,7 @@ export default function FeaturedProductsAdmin() {
           {availableProducts.length === 0 ? (
             <div className="text-center py-8 text-gray-500">
               <p>Aucun produit disponible</p>
-              <p className="text-sm">Créez d'abord des produits depuis "Nouveau Produit"</p>
+              <p className="text-sm">Créez d&apos;abord des produits depuis &quot;Nouveau Produit&quot;</p>
             </div>
           ) : (
             <div className="space-y-3 max-h-96 overflow-y-auto">

@@ -147,7 +147,7 @@ export default function StatsPage() {
           ].map(({ key, label }) => (
             <button
               key={key}
-              onClick={() => setTimeframe(key as any)}
+              onClick={() => setTimeframe(key as 'week' | 'month' | 'year')}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 timeframe === key
                   ? 'bg-blue-600 text-white'

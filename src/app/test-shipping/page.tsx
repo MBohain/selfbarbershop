@@ -1,5 +1,5 @@
-import Navigation from '@/components/Navigation';
-import ShippingCalculator from '@/components/ShippingCalculator';
+import Navigation from &apos;@/components/Navigation&apos;;
+import ShippingCalculator from &apos;@/components/ShippingCalculator&apos;;
 
 export default function TestShipping() {
   const testAmounts = [25, 45, 59.99, 60, 75, 100];
@@ -25,7 +25,7 @@ export default function TestShipping() {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="p-4 bg-blue-50 rounded-lg">
               <h3 className="font-semibold text-blue-900 mb-2">Livraison Gratuite</h3>
-              <p className="text-blue-800">Dès <strong>60€</strong> d'achat</p>
+              <p className="text-blue-800">Dès <strong>60€</strong> d&apos;achat</p>
             </div>
             <div className="p-4 bg-orange-50 rounded-lg">
               <h3 className="font-semibold text-orange-900 mb-2">Frais Standard</h3>
@@ -55,10 +55,10 @@ export default function TestShipping() {
                   </span>
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                     amount >= 60 
-                      ? 'bg-green-100 text-green-800' 
-                      : 'bg-orange-100 text-orange-800'
+                      ? &apos;bg-green-100 text-green-800&apos; 
+                      : &apos;bg-orange-100 text-orange-800&apos;
                   }`}>
-                    {amount >= 60 ? 'Livraison Gratuite' : 'Frais de Livraison'}
+                    {amount >= 60 ? &apos;Livraison Gratuite&apos; : &apos;Frais de Livraison&apos;}
                   </span>
                 </div>
                 

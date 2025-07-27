@@ -1,127 +1,127 @@
-import Navigation from '@/components/Navigation';
-import Link from 'next/link';
-import { StarIcon } from '@heroicons/react/24/solid';
-import { HeartIcon, ShoppingCartIcon, FunnelIcon } from '@heroicons/react/24/outline';
+import Navigation from &apos;@/components/Navigation&apos;;
+import Link from &apos;next/link&apos;;
+import { StarIcon } from &apos;@heroicons/react/24/solid&apos;;
+import { HeartIcon, ShoppingCartIcon, FunnelIcon } from &apos;@heroicons/react/24/outline&apos;;
 
 const allProducts = [
   // Tondeuses
   {
     id: 1,
-    name: 'Tondeuse Professionnelle Pro-X Elite',
-    price: '89.99',
-    originalPrice: '140.00',
+    name: &apos;Tondeuse Professionnelle Pro-X Elite&apos;,
+    price: &apos;89.99&apos;,
+    originalPrice: &apos;140.00&apos;,
     rating: 4.8,
     reviews: 245,
-    image: '/placeholder-trimmer-1.jpg',
-    category: 'Tondeuses',
-    categorySlug: 'tondeuses',
+    image: &apos;/placeholder-trimmer-1.jpg&apos;,
+    category: &apos;Tondeuses&apos;,
+    categorySlug: &apos;tondeuses&apos;,
     discount: 36,
     bestseller: true
   },
   {
     id: 2,
-    name: 'Tondeuse Sans Fil PowerCut',
-    price: '64.99',
-    originalPrice: '95.00',
+    name: &apos;Tondeuse Sans Fil PowerCut&apos;,
+    price: &apos;64.99&apos;,
+    originalPrice: &apos;95.00&apos;,
     rating: 4.6,
     reviews: 189,
-    image: '/placeholder-trimmer-2.jpg',
-    category: 'Tondeuses',
-    categorySlug: 'tondeuses',
+    image: &apos;/placeholder-trimmer-2.jpg&apos;,
+    category: &apos;Tondeuses&apos;,
+    categorySlug: &apos;tondeuses&apos;,
     discount: 32
   },
   // Accessoires
   {
     id: 3,
-    name: 'Kit de Sabots Professionnels (12 pièces)',
-    price: '24.99',
-    originalPrice: '39.99',
+    name: &apos;Kit de Sabots Professionnels (12 pièces)&apos;,
+    price: &apos;24.99&apos;,
+    originalPrice: &apos;39.99&apos;,
     rating: 4.7,
     reviews: 156,
-    image: '/placeholder-guards.jpg',
-    category: 'Accessoires',
-    categorySlug: 'accessoires',
+    image: &apos;/placeholder-guards.jpg&apos;,
+    category: &apos;Accessoires&apos;,
+    categorySlug: &apos;accessoires&apos;,
     discount: 38
   },
   {
     id: 4,
-    name: 'Ciseaux de Barbier Japonais',
-    price: '45.99',
-    originalPrice: '75.00',
+    name: &apos;Ciseaux de Barbier Japonais&apos;,
+    price: &apos;45.99&apos;,
+    originalPrice: &apos;75.00&apos;,
     rating: 4.9,
     reviews: 203,
-    image: '/placeholder-scissors.jpg',
-    category: 'Accessoires',
-    categorySlug: 'accessoires',
+    image: &apos;/placeholder-scissors.jpg&apos;,
+    category: &apos;Accessoires&apos;,
+    categorySlug: &apos;accessoires&apos;,
     discount: 39,
     bestseller: true
   },
   // Produits de soin
   {
     id: 5,
-    name: 'Huile de Barbe Premium 50ml',
-    price: '24.99',
-    originalPrice: '35.00',
+    name: &apos;Huile de Barbe Premium 50ml&apos;,
+    price: &apos;24.99&apos;,
+    originalPrice: &apos;35.00&apos;,
     rating: 4.8,
     reviews: 167,
-    image: '/placeholder-oil.jpg',
-    category: 'Soins',
-    categorySlug: 'produits',
+    image: &apos;/placeholder-oil.jpg&apos;,
+    category: &apos;Soins&apos;,
+    categorySlug: &apos;produits&apos;,
     discount: 29
   },
   {
     id: 6,
-    name: 'Baume de Barbe Hydratant',
-    price: '19.99',
-    originalPrice: '32.00',
+    name: &apos;Baume de Barbe Hydratant&apos;,
+    price: &apos;19.99&apos;,
+    originalPrice: &apos;32.00&apos;,
     rating: 4.6,
     reviews: 134,
-    image: '/placeholder-balm.jpg',
-    category: 'Soins',
-    categorySlug: 'produits',
+    image: &apos;/placeholder-balm.jpg&apos;,
+    category: &apos;Soins&apos;,
+    categorySlug: &apos;produits&apos;,
     discount: 38
   },
   // Self-cut
   {
     id: 7,
-    name: 'Kit Self-Cut Débutant',
-    price: '49.99',
-    originalPrice: '75.00',
+    name: &apos;Kit Self-Cut Débutant&apos;,
+    price: &apos;49.99&apos;,
+    originalPrice: &apos;75.00&apos;,
     rating: 4.5,
     reviews: 89,
-    image: '/placeholder-selfcut.jpg',
-    category: 'Self-Cut',
-    categorySlug: 'self-cut',
+    image: &apos;/placeholder-selfcut.jpg&apos;,
+    category: &apos;Self-Cut&apos;,
+    categorySlug: &apos;self-cut&apos;,
     discount: 33
   },
   {
     id: 8,
-    name: 'Miroir 3 Faces Pliable',
-    price: '34.99',
-    originalPrice: '55.00',
+    name: &apos;Miroir 3 Faces Pliable&apos;,
+    price: &apos;34.99&apos;,
+    originalPrice: &apos;55.00&apos;,
     rating: 4.7,
     reviews: 112,
-    image: '/placeholder-mirror.jpg',
-    category: 'Self-Cut',
-    categorySlug: 'self-cut',
+    image: &apos;/placeholder-mirror.jpg&apos;,
+    category: &apos;Self-Cut&apos;,
+    categorySlug: &apos;self-cut&apos;,
     discount: 36
   }
 ];
 
 const categories = [
-  { name: 'Tous les produits', slug: 'all', count: allProducts.length },
-  { name: 'Tondeuses', slug: 'tondeuses', count: allProducts.filter(p => p.categorySlug === 'tondeuses').length },
-  { name: 'Accessoires', slug: 'accessoires', count: allProducts.filter(p => p.categorySlug === 'accessoires').length },
-  { name: 'Soins', slug: 'produits', count: allProducts.filter(p => p.categorySlug === 'produits').length },
-  { name: 'Self-Cut', slug: 'self-cut', count: allProducts.filter(p => p.categorySlug === 'self-cut').length }
+  { name: &apos;Tous les produits&apos;, slug: &apos;all&apos;, count: allProducts.length },
+  { name: &apos;Tondeuses&apos;, slug: &apos;tondeuses&apos;, count: allProducts.filter(p => p.categorySlug === &apos;tondeuses&apos;).length },
+  { name: &apos;Accessoires&apos;, slug: &apos;accessoires&apos;, count: allProducts.filter(p => p.categorySlug === &apos;accessoires&apos;).length },
+  { name: &apos;Soins&apos;, slug: &apos;produits&apos;, count: allProducts.filter(p => p.categorySlug === &apos;produits&apos;).length },
+  { name: &apos;Self-Cut&apos;, slug: &apos;self-cut&apos;, count: allProducts.filter(p => p.categorySlug === &apos;self-cut&apos;).length }
 ];
 
 const priceRanges = [
-  { label: 'Moins de 25€', min: 0, max: 25 },
-  { label: '25€ - 50€', min: 25, max: 50 },
-  { label: '50€ - 75€', min: 50, max: 75 },
-  { label: '75€ - 100€', min: 75, max: 100 },
-  { label: 'Plus de 100€', min: 100, max: 999 }
+  { label: &apos;Moins de 25€&apos;, min: 0, max: 25 },
+  { label: &apos;25€ - 50€&apos;, min: 25, max: 50 },
+  { label: &apos;50€ - 75€&apos;, min: 50, max: 75 },
+  { label: &apos;75€ - 100€&apos;, min: 75, max: 100 },
+  { label: &apos;Plus de 100€&apos;, min: 100, max: 999 }
 ];
 
 export default function ProduitsPage() {
@@ -135,7 +135,7 @@ export default function ProduitsPage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Tous nos Produits</h1>
-              <p className="text-gray-600 mt-2">Découvrez notre gamme complète d'équipements de barbier</p>
+              <p className="text-gray-600 mt-2">Découvrez notre gamme complète d&apos;équipements de barbier</p>
             </div>
             <div className="flex items-center gap-4 mt-4 md:mt-0">
               <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 lg:hidden">
@@ -214,7 +214,7 @@ export default function ProduitsPage() {
                             <StarIcon
                               key={i}
                               className={`h-4 w-4 ${
-                                i < rating ? 'text-yellow-400' : 'text-gray-300'
+                                i < rating ? &apos;text-yellow-400&apos; : &apos;text-gray-300&apos;
                               }`}
                             />
                           ))}
@@ -325,7 +325,7 @@ export default function ProduitsPage() {
                           <StarIcon
                             key={i}
                             className={`h-4 w-4 ${
-                              i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'
+                              i < Math.floor(product.rating) ? &apos;text-yellow-400&apos; : &apos;text-gray-300&apos;
                             }`}
                           />
                         ))}

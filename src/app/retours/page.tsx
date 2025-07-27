@@ -1,55 +1,55 @@
-import Navigation from '@/components/Navigation';
+import Navigation from &apos;@/components/Navigation&apos;;
 import { 
   ArrowPathIcon, 
   ShieldCheckIcon, 
   ClockIcon,
   ExclamationTriangleIcon 
-} from '@heroicons/react/24/outline';
+} from &apos;@heroicons/react/24/outline&apos;;
 
 const returnReasons = [
   {
-    title: 'Produit défectueux',
-    description: 'Remboursement complet sans retour requis',
+    title: &apos;Produit défectueux&apos;,
+    description: &apos;Remboursement complet sans retour requis&apos;,
     icon: ExclamationTriangleIcon,
-    action: 'Remboursement immédiat',
-    timeframe: '2-3 jours ouvrés'
+    action: &apos;Remboursement immédiat&apos;,
+    timeframe: &apos;2-3 jours ouvrés&apos;
   },
   {
-    title: 'Produit non conforme',
-    description: 'Ne correspond pas à la description',
+    title: &apos;Produit non conforme&apos;,
+    description: &apos;Ne correspond pas à la description&apos;,
     icon: ShieldCheckIcon,
-    action: 'Remboursement ou échange',
-    timeframe: '5-7 jours ouvrés'
+    action: &apos;Remboursement ou échange&apos;,
+    timeframe: &apos;5-7 jours ouvrés&apos;
   },
   {
-    title: 'Changement d\'avis',
-    description: 'Retour possible sous conditions',
+    title: &apos;Changement d\&apos;avis&apos;,
+    description: &apos;Retour possible sous conditions&apos;,
     icon: ArrowPathIcon,
-    action: 'Retour à vos frais',
-    timeframe: '10-14 jours ouvrés'
+    action: &apos;Retour à vos frais&apos;,
+    timeframe: &apos;10-14 jours ouvrés&apos;
   }
 ];
 
 const returnProcess = [
   {
     step: 1,
-    title: 'Contactez-nous',
-    description: 'Envoyez un email avec votre numéro de commande et photos si produit défectueux'
+    title: &apos;Contactez-nous&apos;,
+    description: &apos;Envoyez un email avec votre numéro de commande et photos si produit défectueux&apos;
   },
   {
     step: 2,
-    title: 'Évaluation',
-    description: 'Notre équipe évalue votre demande sous 24h'
+    title: &apos;Évaluation&apos;,
+    description: &apos;Notre équipe évalue votre demande sous 24h&apos;
   },
   {
     step: 3,
-    title: 'Solution proposée',
-    description: 'Remboursement, échange ou retour selon le cas'
+    title: &apos;Solution proposée&apos;,
+    description: &apos;Remboursement, échange ou retour selon le cas&apos;
   },
   {
     step: 4,
-    title: 'Remboursement',
-    description: 'Crédit sur votre méthode de paiement originale'
+    title: &apos;Remboursement&apos;,
+    description: &apos;Crédit sur votre méthode de paiement originale&apos;
   }
 ];
 
@@ -174,7 +174,7 @@ export default function RetoursPage() {
               </h3>
               <p className="text-gray-600">
                 30 jours à compter de la réception pour signaler un problème. 
-                Les retours pour changement d'avis sont acceptés sous 14 jours.
+                Les retours pour changement d&apos;avis sont acceptés sous 14 jours.
               </p>
             </div>
 
@@ -185,7 +185,7 @@ export default function RetoursPage() {
               <p className="text-gray-600">
                 - Produit défectueux : <strong>Frais gratuits</strong><br />
                 - Erreur de notre part : <strong>Frais gratuits</strong><br />
-                - Changement d'avis : <strong>À votre charge</strong>
+                - Changement d&apos;avis : <strong>À votre charge</strong>
               </p>
             </div>
 
@@ -244,7 +244,7 @@ export default function RetoursPage() {
         <div className="bg-blue-50 rounded-lg p-6 text-center">
           <ClockIcon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-gray-900 mb-2">
-            Besoin d'aide pour un retour ?
+            Besoin d&apos;aide pour un retour ?
           </h3>
           <p className="text-gray-600 mb-4">
             Notre équipe traite les demandes de retour sous 24h

@@ -34,7 +34,7 @@ interface Product {
 export default function AdminDashboard() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<unknown>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -128,7 +128,7 @@ export default function AdminDashboard() {
                 Dashboard Administrateur
               </h1>
               <p className="text-gray-600 mt-1">
-                Bienvenue, {user?.email}
+                Bienvenue, {(user as { email?: string })?.email}
               </p>
             </div>
             <div className="flex gap-4">

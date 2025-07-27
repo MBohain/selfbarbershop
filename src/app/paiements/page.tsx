@@ -1,29 +1,29 @@
-import Navigation from '@/components/Navigation';
+import Navigation from &apos;@/components/Navigation&apos;;
 import { 
   CreditCardIcon, 
   ShieldCheckIcon, 
   ClockIcon,
   BanknotesIcon 
-} from '@heroicons/react/24/outline';
+} from &apos;@heroicons/react/24/outline&apos;;
 
 const paymentMethods = [
   {
-    name: 'Cartes de Crédit/Débit',
-    description: 'Visa, Mastercard, American Express acceptées',
+    name: &apos;Cartes de Crédit/Débit&apos;,
+    description: &apos;Visa, Mastercard, American Express acceptées&apos;,
     icon: CreditCardIcon,
-    security: 'Chiffrement SSL 256-bit'
+    security: &apos;Chiffrement SSL 256-bit&apos;
   },
   {
-    name: 'Paiement Sécurisé',
-    description: 'Powered by Stripe - Leader mondial des paiements en ligne',
+    name: &apos;Paiement Sécurisé&apos;,
+    description: &apos;Powered by Stripe - Leader mondial des paiements en ligne&apos;,
     icon: ShieldCheckIcon,
-    security: 'Conforme PCI DSS'
+    security: &apos;Conforme PCI DSS&apos;
   },
   {
-    name: 'Traitement Immédiat',
-    description: 'Votre commande est traitée dès validation du paiement',
+    name: &apos;Traitement Immédiat&apos;,
+    description: &apos;Votre commande est traitée dès validation du paiement&apos;,
     icon: ClockIcon,
-    security: 'Confirmation instantanée'
+    security: &apos;Confirmation instantanée&apos;
   }
 ];
 
@@ -131,7 +131,7 @@ export default function PaiementsPage() {
         <div className="mt-12 bg-blue-50 rounded-lg p-6 text-center">
           <BanknotesIcon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-gray-900 mb-2">
-            Besoin d'aide pour votre paiement ?
+            Besoin d&apos;aide pour votre paiement ?
           </h3>
           <p className="text-gray-600 mb-4">
             Notre équipe support est disponible pour vous aider avec toute question relative aux paiements.

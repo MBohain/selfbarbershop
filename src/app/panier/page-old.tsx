@@ -1,33 +1,33 @@
-import Navigation from '@/components/Navigation';
-import Link from 'next/link';
+import Navigation from &apos;@/components/Navigation&apos;;
+import Link from &apos;next/link&apos;;
 import { 
   TrashIcon, 
   MinusIcon, 
   PlusIcon,
   ShoppingBagIcon,
   LockClosedIcon 
-} from '@heroicons/react/24/outline';
+} from &apos;@heroicons/react/24/outline&apos;;
 
-// Simulation d'un panier pour la démo
+// Simulation d&apos;un panier pour la démo
 const cartItems = [
   {
     id: 1,
-    productId: '1',
-    name: 'Tondeuse Professionnelle Pro-X Elite',
+    productId: &apos;1&apos;,
+    name: &apos;Tondeuse Professionnelle Pro-X Elite&apos;,
     price: 89.99,
     originalPrice: 140.00,
     quantity: 1,
-    image: '/placeholder-trimmer-1.jpg',
+    image: &apos;/placeholder-trimmer-1.jpg&apos;,
     inStock: true
   },
   {
     id: 2,
-    productId: '4',
-    name: 'Ciseaux de Barbier Japonais',
+    productId: &apos;4&apos;,
+    name: &apos;Ciseaux de Barbier Japonais&apos;,
     price: 45.99,
     originalPrice: 75.00,
     quantity: 2,
-    image: '/placeholder-scissors.jpg',
+    image: &apos;/placeholder-scissors.jpg&apos;,
     inStock: true
   }
 ];
@@ -152,7 +152,7 @@ export default function PanierPage() {
                   
                   {shipping > 0 && (
                     <p className="text-xs text-gray-500">
-                      Livraison gratuite dès 75€ d'achat
+                      Livraison gratuite dès 75€ d&apos;achat
                     </p>
                   )}
                   
