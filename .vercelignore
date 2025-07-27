@@ -1,0 +1,30 @@
+# Development files
+.env.local
+.env.development
+.env.test
+.git
+.gitignore
+README.md
+check_build.sh
+
+# Prisma files (will be regenerated)
+prisma/migrations
+node_modules/.prisma
+
+# IDE files
+.vscode
+.idea
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Local development
+.DS_Store
+Thumbs.db
