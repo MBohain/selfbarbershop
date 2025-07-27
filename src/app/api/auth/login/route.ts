@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import '../../../lib/env.js'; // Charger les variables d'environnement par défaut
 
 const prisma = new PrismaClient();
 
