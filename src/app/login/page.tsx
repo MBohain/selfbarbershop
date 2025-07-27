@@ -1,6 +1,7 @@
 'use client';
 
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
@@ -53,7 +54,7 @@ export default function LoginPage() {
         <div className="w-full max-w-md space-y-8">
           <div>
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-              Connexion Administrateur
+              Connexion
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Accédez au panneau d'administration
@@ -64,7 +65,7 @@ export default function LoginPage() {
             <div className="rounded-md shadow-sm space-y-4">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Adresse email
+                  E-mail
                 </label>
                 <input
                   id="email"
@@ -75,7 +76,7 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="relative block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
-                  placeholder="admin@selfbarbershoppro.fr"
+                  placeholder="E-mail"
                 />
               </div>
               
@@ -128,6 +129,8 @@ export default function LoginPage() {
           </form>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

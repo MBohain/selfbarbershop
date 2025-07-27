@@ -253,9 +253,6 @@ export default function RetoursPage() {
             <p className="text-sm text-gray-600">
               <strong>Email :</strong> retours@selfbarbershoppro.fr
             </p>
-            <p className="text-sm text-gray-600">
-              <strong>Téléphone :</strong> 01 23 45 67 89
-            </p>
           </div>
         </div>
       </div>

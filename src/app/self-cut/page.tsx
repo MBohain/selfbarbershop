@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { 
@@ -349,21 +350,21 @@ export default function SelfCutPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.2),transparent_50%)]"></div>
           </div>
           
-          <div className="relative bg-white bg-opacity-5 backdrop-blur-sm rounded-2xl shadow-2xl p-12 text-white border border-white border-opacity-10">
+          <div className="relative bg-white rounded-2xl shadow-2xl p-12 text-gray-900 border border-gray-200">
             <div className="max-w-6xl mx-auto">
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-black rounded-full text-sm font-bold mb-6">
                   🏆 BEST-SELLER #1 - Plus de 10,000 clients satisfaits
                 </div>
-                <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
                   Maîtrisez le Self-Cut comme un Pro
                 </h2>
-                <p className="text-xl lg:text-2xl mb-4 text-white max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                <p className="text-xl lg:text-2xl mb-4 text-gray-700 max-w-3xl mx-auto leading-relaxed">
                   Le guide complet qui transforme n'importe qui en expert de la coupe à domicile
                 </p>
-                <div className="flex items-center justify-center gap-6 text-sm text-white font-medium">
-                  <div className="flex items-center bg-white bg-opacity-20 px-3 py-2 rounded-full backdrop-blur-sm border border-white border-opacity-30">
+                <div className="flex items-center justify-center gap-6 text-sm text-gray-700 font-medium">
+                  <div className="flex items-center bg-gray-100 px-3 py-2 rounded-full backdrop-blur-sm border border-gray-300">
                     <StarIcon className="h-5 w-5 text-yellow-400 mr-1" />
                     <StarIcon className="h-5 w-5 text-yellow-400 mr-1" />
                     <StarIcon className="h-5 w-5 text-yellow-400 mr-1" />
@@ -371,7 +372,7 @@ export default function SelfCutPage() {
                     <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
                     4.9/5 (2,847 avis)
                   </div>
-                  <div className="bg-white bg-opacity-20 px-3 py-2 rounded-full backdrop-blur-sm border border-white border-opacity-30">✓ Garantie satisfait ou remboursé 30 jours</div>
+                  <div className="bg-gray-100 px-3 py-2 rounded-full backdrop-blur-sm border border-gray-300">✓ Garantie satisfait ou remboursé 30 jours</div>
                 </div>
               </div>
 
@@ -397,20 +398,20 @@ export default function SelfCutPage() {
                   </div>
 
                   <div className="grid grid-cols-3 gap-4 text-center">
-                    <div className="bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm border border-white border-opacity-30 shadow-lg">
-                      <BookOpenIcon className="h-8 w-8 mx-auto mb-2 text-blue-200" />
-                      <div className="text-2xl font-bold text-white">{guideInfo.totalPages}</div>
-                      <div className="text-xs text-gray-100 font-semibold">Pages détaillées</div>
+                    <div className="bg-gray-100 rounded-xl p-4 backdrop-blur-sm border border-gray-300 shadow-lg">
+                      <BookOpenIcon className="h-8 w-8 mx-auto mb-2 text-blue-600" />
+                      <div className="text-2xl font-bold text-gray-900">{guideInfo.totalPages}</div>
+                      <div className="text-xs text-gray-600 font-semibold">Pages détaillées</div>
                     </div>
-                    <div className="bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm border border-white border-opacity-30 shadow-lg">
-                      <PlayIcon className="h-8 w-8 mx-auto mb-2 text-blue-200" />
-                      <div className="text-2xl font-bold text-white">{guideInfo.videoCount}</div>
-                      <div className="text-xs text-gray-100 font-semibold">Vidéos HD</div>
+                    <div className="bg-gray-100 rounded-xl p-4 backdrop-blur-sm border border-gray-300 shadow-lg">
+                      <PlayIcon className="h-8 w-8 mx-auto mb-2 text-blue-600" />
+                      <div className="text-2xl font-bold text-gray-900">{guideInfo.videoCount}</div>
+                      <div className="text-xs text-gray-600 font-semibold">Vidéos HD</div>
                     </div>
-                    <div className="bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm border border-white border-opacity-30 shadow-lg">
-                      <UserGroupIcon className="h-8 w-8 mx-auto mb-2 text-blue-200" />
-                      <div className="text-2xl font-bold text-white">24/7</div>
-                      <div className="text-xs text-gray-100 font-semibold">Support expert</div>
+                    <div className="bg-gray-100 rounded-xl p-4 backdrop-blur-sm border border-gray-300 shadow-lg">
+                      <UserGroupIcon className="h-8 w-8 mx-auto mb-2 text-blue-600" />
+                      <div className="text-2xl font-bold text-gray-900">24/7</div>
+                      <div className="text-xs text-gray-600 font-semibold">Support expert</div>
                     </div>
                   </div>
                 </div>
@@ -669,6 +670,8 @@ export default function SelfCutPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }

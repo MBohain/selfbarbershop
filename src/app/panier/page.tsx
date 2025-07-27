@@ -1,6 +1,7 @@
 'use client';
 
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { TrashIcon, MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
 import { useCart } from '@/contexts/CartContext';
@@ -199,6 +200,8 @@ export default function PanierPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }

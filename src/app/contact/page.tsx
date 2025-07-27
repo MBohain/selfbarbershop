@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { 
   PhoneIcon, 
   EnvelopeIcon, 
@@ -66,18 +67,6 @@ export default function ContactPage() {
                   id="email"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="votre@email.com"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Téléphone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="06 12 34 56 78"
                 />
               </div>
               
@@ -164,19 +153,6 @@ export default function ContactPage() {
 
               <div className="bg-white rounded-lg shadow-sm p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-green-100 rounded-lg p-3">
-                    <PhoneIcon className="h-6 w-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">Téléphone</h3>
-                    <p className="text-gray-600 mt-1">01 23 45 67 89</p>
-                    <p className="text-sm text-gray-500 mt-2">Du lundi au vendredi, 9h-18h</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <div className="flex items-start space-x-4">
                   <div className="bg-purple-100 rounded-lg p-3">
                     <ChatBubbleLeftRightIcon className="h-6 w-6 text-purple-600" />
                   </div>
@@ -234,22 +210,21 @@ export default function ContactPage() {
 
             {/* Business Hours */}
             <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white">
-              <h3 className="text-lg font-semibold mb-4">Besoin d'aide immédiate ?</h3>
+              <h3 className="text-lg font-semibold mb-4">Besoin d'aide ?</h3>
               <p className="text-blue-100 mb-4">
                 Notre équipe support est disponible pour vous aider avec toutes vos questions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <button className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-                  Appeler maintenant
-                </button>
+              <div className="flex flex-col gap-3">
                 <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-400 transition-colors">
-                  Chat en direct
+                  Nous contacter par email
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
