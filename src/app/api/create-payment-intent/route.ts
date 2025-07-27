@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
   } catch (error: unknown) {
     console.error('Erreur création PaymentIntent:', error);
     return NextResponse.json(
-      { error: error.message || 'Erreur lors de la création du paiement' },
+      { error: error instanceof Error ? error.message : 'Erreur lors de la création du paiement' },
       { status: 500 }
     );
   }

@@ -64,7 +64,7 @@ export async function POST(request: Request) {
   } catch (error: unknown) {
     console.error('Error creating product:', error);
     
-    if (error.message === 'Token manquant' || error.message === 'Token invalide' || error.message === 'Accès non autorisé') {
+    if (error instanceof Error && (error.message === 'Token manquant' || error.message === 'Token invalide' || error.message === 'Accès non autorisé')) {
       return NextResponse.json(
         { message: error.message },
         { status: 401 }

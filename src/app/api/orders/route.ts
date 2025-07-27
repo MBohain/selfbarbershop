@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Get products with AliExpress info
-    const productIds = items.map((item: unknown) => item.productId);
+    const productIds = items.map((item: any) => item.productId);
     const products = await prisma.product.findMany({
       where: {
         id: { in: productIds }
@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
 
     // Calculate totals
     let subtotal = 0;
-    const orderItems = items.map((item: unknown) => {
+    const orderItems = items.map((item: any) => {
       const product = products.find(p => p.id === item.productId);
       if (!product) throw new Error('Product not found');
       
@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
         paymentStatus: 'PAID',
         stripeSessionId: paymentIntent.id,
         orderItems: {
-          create: orderItems.map((item: unknown) => ({
+          create: orderItems.map((item: any) => ({
             productId: item.productId,
             quantity: item.quantity,
             price: item.price

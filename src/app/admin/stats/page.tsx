@@ -102,7 +102,16 @@ export default function StatsPage() {
   const getOrders = () => stats?.current.orders || 0;
   const getProfit = () => stats?.current.profit || 0;
   const getVisitors = () => stats?.current.visitors || 0;
-  const getConversion = () => stats?.current.conversionRate || 0;  const StatCard = ({ title, value, icon: Icon, change, prefix = '', suffix = '' }: unknown) => (
+  const getConversion = () => stats?.current.conversionRate || 0;
+
+  const StatCard = ({ title, value, icon: Icon, change = 0, prefix = '', suffix = '' }: {
+    title: string;
+    value: number;
+    icon: React.ElementType;
+    change?: number;
+    prefix?: string;
+    suffix?: string;
+  }) => (
     <div className="bg-white rounded-lg shadow-lg p-6">
       <div className="flex items-center justify-between">
         <div>

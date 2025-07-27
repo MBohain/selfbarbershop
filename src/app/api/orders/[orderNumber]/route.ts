@@ -4,12 +4,13 @@ import { aliExpressService } from '@/lib/aliexpress';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { orderNumber: string } }
+  { params }: { params: Promise<{ orderNumber: string }> }
 ) {
   try {
+    const { orderNumber } = await params;
     const order = await prisma.order.findUnique({
       where: {
-        orderNumber: params.orderNumber
+        orderNumber
       },
       include: {
         orderItems: {

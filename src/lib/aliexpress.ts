@@ -61,7 +61,7 @@ class AliExpressService {
           error: 'AliExpress order failed - product out of stock'
         };
       }
-    } catch {
+    } catch (error) {
       console.error('AliExpress API error:', error);
       return {
         success: false,

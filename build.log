@@ -1,0 +1,96 @@
+
+> babershop@0.1.0 build
+> next build
+
+   ▲ Next.js 15.4.3
+   - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 1000ms
+   Linting and checking validity of types ...
+
+./src/app/accessoires/page-new.tsx
+153:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/accessoires/page.tsx
+153:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/admin/featured-products/page.tsx
+138:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+189:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+229:27  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/admin/guide/page.tsx
+7:3  Warning: 'PencilIcon' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/admin/products/page.tsx
+304:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/admin/settings/page.tsx
+46:6  Warning: React Hook useEffect has a missing dependency: 'router'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/admin/stats/page.tsx
+57:6  Warning: React Hook useEffect has a missing dependency: 'fetchStats'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/api/admin/guide/route.ts
+2:10  Warning: 'PrismaClient' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/admin/orders/[id]/route.ts
+2:10  Warning: 'PrismaClient' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/admin/orders/route.ts
+2:10  Warning: 'PrismaClient' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/admin/settings/route.ts
+33:65  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/api/admin/stats/route.ts
+2:8  Warning: 'prisma' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/contact/page.tsx
+5:3  Warning: 'MapPinIcon' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/page.tsx
+127:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/panier/page-new.tsx
+92:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/panier/page.tsx
+92:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/produits/page-new.tsx
+220:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/produits/page.tsx
+220:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/self-cut/page.tsx
+226:23  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/tondeuses/page-new.tsx
+153:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/tondeuses/page.tsx
+153:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/CartDrawer.tsx
+82:37  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/contexts/CartContext.tsx
+165:6  Warning: React Hook useEffect has a missing dependency: 'refreshCart'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+Failed to compile.
+
+./src/app/admin/products/page.tsx:119:16
+Type error: 'aValue' is possibly 'undefined'.
+
+[0m [90m 117 |[39m       
+ [90m 118 |[39m       [36mif[39m (sortOrder [33m===[39m [32m'asc'[39m) {
+[31m[1m>[22m[39m[90m 119 |[39m         [36mreturn[39m aValue [33m<[39m bValue [33m?[39m [33m-[39m[35m1[39m [33m:[39m aValue [33m>[39m bValue [33m?[39m [35m1[39m [33m:[39m [35m0[39m[33m;[39m
+ [90m     |[39m                [31m[1m^[22m[39m
+ [90m 120 |[39m       } [36melse[39m {
+ [90m 121 |[39m         [36mreturn[39m aValue [33m>[39m bValue [33m?[39m [33m-[39m[35m1[39m [33m:[39m aValue [33m<[39m bValue [33m?[39m [35m1[39m [33m:[39m [35m0[39m[33m;[39m
+ [90m 122 |[39m       }[0m
+Next.js build worker exited with code: 1 and signal: null

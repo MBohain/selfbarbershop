@@ -112,6 +112,10 @@ export default function ProductsPage() {
       let aValue = a[sortBy as keyof Product];
       let bValue = b[sortBy as keyof Product];
       
+      // Gérer les valeurs undefined
+      if (aValue === undefined) aValue = '';
+      if (bValue === undefined) bValue = '';
+      
       if (typeof aValue === 'string') aValue = aValue.toLowerCase();
       if (typeof bValue === 'string') bValue = bValue.toLowerCase();
       

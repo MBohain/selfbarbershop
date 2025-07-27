@@ -1,0 +1,163 @@
+
+> babershop@0.1.0 build
+> next build
+
+   ▲ Next.js 15.4.3
+   - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 1000ms
+   Linting and checking validity of types ...
+
+./src/app/accessoires/page-new.tsx
+153:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/accessoires/page.tsx
+153:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/admin/featured-products/page.tsx
+138:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+189:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+229:27  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/admin/guide/page.tsx
+7:3  Warning: 'PencilIcon' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/admin/products/page.tsx
+308:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/admin/settings/page.tsx
+46:6  Warning: React Hook useEffect has a missing dependency: 'router'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/admin/stats/page.tsx
+57:6  Warning: React Hook useEffect has a missing dependency: 'fetchStats'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/api/admin/guide/route.ts
+2:10  Warning: 'PrismaClient' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/admin/orders/[id]/route.ts
+2:10  Warning: 'PrismaClient' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/admin/orders/route.ts
+2:10  Warning: 'PrismaClient' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/admin/settings/route.ts
+33:65  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+33:80  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/api/admin/stats/route.ts
+2:8  Warning: 'prisma' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/orders/route.ts
+44:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+60:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+129:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/api/products/route.ts
+18:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+31:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/contact/page.tsx
+5:3  Warning: 'MapPinIcon' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/page.tsx
+127:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/panier/page-new.tsx
+92:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/panier/page.tsx
+92:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/produits/page-new.tsx
+220:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/produits/page.tsx
+220:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/self-cut/page-new.tsx
+83:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/self-cut/page.tsx
+226:23  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/tondeuses/page-new.tsx
+153:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/tondeuses/page.tsx
+153:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/CartDrawer.tsx
+82:37  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/CartNotifications.tsx
+10:13  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+17:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+34:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/contexts/CartContext.tsx
+165:6  Warning: React Hook useEffect has a missing dependency: 'refreshCart'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/42) ...
+   Generating static pages (10/42) 
+   Generating static pages (20/42) 
+   Generating static pages (31/42) 
+ ✓ Generating static pages (42/42)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    3.81 kB         127 kB
+├ ○ /_not-found                            994 B         101 kB
+├ ○ /accessoires                         2.58 kB         126 kB
+├ ○ /admin/dashboard                      3.1 kB         126 kB
+├ ○ /admin/featured-products             2.82 kB         102 kB
+├ ○ /admin/guide                         3.86 kB         103 kB
+├ ○ /admin/orders                         3.6 kB         103 kB
+├ ○ /admin/products                      3.79 kB         107 kB
+├ ○ /admin/products/new                  2.46 kB         126 kB
+├ ○ /admin/settings                      4.21 kB         127 kB
+├ ○ /admin/stats                         3.21 kB         103 kB
+├ ƒ /api/admin/guide                       185 B        99.8 kB
+├ ƒ /api/admin/guide/upload                185 B        99.8 kB
+├ ƒ /api/admin/orders                      185 B        99.8 kB
+├ ƒ /api/admin/orders/[id]                 185 B        99.8 kB
+├ ƒ /api/admin/products                    185 B        99.8 kB
+├ ƒ /api/admin/products/[id]               185 B        99.8 kB
+├ ƒ /api/admin/products/featured           185 B        99.8 kB
+├ ƒ /api/admin/settings                    185 B        99.8 kB
+├ ƒ /api/admin/stats                       185 B        99.8 kB
+├ ƒ /api/auth/login                        185 B        99.8 kB
+├ ƒ /api/cart                              185 B        99.8 kB
+├ ƒ /api/categories                        185 B        99.8 kB
+├ ƒ /api/create-payment-intent             185 B        99.8 kB
+├ ƒ /api/guide/info                        185 B        99.8 kB
+├ ƒ /api/orders                            185 B        99.8 kB
+├ ƒ /api/orders/[orderNumber]              185 B        99.8 kB
+├ ƒ /api/products                          185 B        99.8 kB
+├ ƒ /api/products/[id]                     185 B        99.8 kB
+├ ƒ /api/products/featured                 185 B        99.8 kB
+├ ƒ /api/shipping                          185 B        99.8 kB
+├ ƒ /api/status                            185 B        99.8 kB
+├ ○ /checkout                             8.7 kB         132 kB
+├ ○ /contact                               178 B         123 kB
+├ ○ /livraison                             178 B         123 kB
+├ ○ /login                               2.12 kB         125 kB
+├ ○ /paiements                             178 B         123 kB
+├ ○ /panier                               2.3 kB         126 kB
+├ ○ /produits                            2.89 kB         126 kB
+├ ○ /retours                               178 B         123 kB
+├ ○ /self-cut                            7.23 kB         130 kB
+├ ○ /test-shipping                       1.37 kB         125 kB
+└ ○ /tondeuses                           2.58 kB         126 kB
++ First Load JS shared by all            99.6 kB
+  ├ chunks/4bd1b696-602635ee57868870.js  54.1 kB
+  ├ chunks/5964-b11deb70447c0844.js      43.5 kB
+  └ other shared chunks (total)          1.93 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

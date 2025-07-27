@@ -22,7 +22,7 @@ const returnReasons = [
     timeframe: '5-7 jours ouvrés'
   },
   {
-    title: 'Changement d\'avis&apos;,
+    title: 'Changement d\'avis',
     description: 'Retour possible sous conditions',
     icon: ArrowPathIcon,
     action: 'Retour à vos frais',

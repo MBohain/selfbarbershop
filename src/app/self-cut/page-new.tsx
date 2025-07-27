@@ -80,7 +80,7 @@ export default async function SelfCutPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product: unknown) => (
+            {products.map((product: any) => (
               <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="h-48 bg-gray-200 flex items-center justify-center">
                   <span className="text-gray-500">Image produit</span>

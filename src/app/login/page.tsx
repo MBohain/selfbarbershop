@@ -39,7 +39,7 @@ export default function LoginPage() {
       // Rediriger vers le dashboard admin
       router.push('/admin/dashboard');
     } catch (error: unknown) {
-      setError(error.message);
+      setError(error instanceof Error ? error.message : 'Erreur de connexion');
     } finally {
       setLoading(false);
     }

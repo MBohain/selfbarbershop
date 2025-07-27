@@ -29,13 +29,13 @@ function verifyAdmin(request: Request) {
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // Vérifier l'authentification
     verifyAdmin(request);
 
-    const productId = params.id;
+    const { id: productId } = await params;
 
     // Supprimer le produit
     await prisma.product.delete({
@@ -49,7 +49,7 @@ export async function DELETE(
   } catch (error: unknown) {
     console.error('Error deleting product:', error);
     
-    if (error.message === 'Token manquant' || error.message === 'Token invalide' || error.message === 'Accès non autorisé') {
+    if (error instanceof Error && (error.message === 'Token manquant' || error.message === 'Token invalide' || error.message === 'Accès non autorisé')) {
       return NextResponse.json(
         { message: error.message },
         { status: 401 }
