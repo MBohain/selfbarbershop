@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prisma generate && next build",
+    "build": "prisma generate && prisma db push && npx tsx scripts/setup-production.js && next build",
     "start": "next start",
     "lint": "next lint",
     "db:seed": "npx tsx prisma/seed.ts",
     "db:studio": "npx prisma studio",
     "db:reset": "npx prisma migrate reset && npm run db:seed",
     "postinstall": "prisma generate",
-    "deploy": "npx prisma db push && npx tsx scripts/create-admin.js"
+    "deploy": "npx prisma db push && npx tsx scripts/create-admin.js",
+    "production-setup": "npx prisma db push && npx tsx scripts/setup-production.js"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",
