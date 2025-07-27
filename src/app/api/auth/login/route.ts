@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import '../../../lib/env.js'; // Charger les variables d'environnement par défaut
 
 const prisma = new PrismaClient();
 
@@ -47,7 +46,7 @@ export async function POST(request: Request) {
         email: user.email, 
         role: user.role 
       },
-      process.env.JWT_SECRET || 'your-secret-key',
+      process.env.JWT_SECRET || 'selfbarbershop-admin-secret-key-2025',
       { expiresIn: '24h' }
     );
 
