@@ -1,12 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+// Vérification de la clé Stripe avec fallback pour le build
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY || 'sk_test_dummy_for_build';
+
+const stripe = new Stripe(stripeSecretKey, {
   apiVersion: '2025-06-30.basil',
 });
 
 export async function POST(request: NextRequest) {
   try {
+    // Vérifier que la vraie clé Stripe est disponible en runtime
+    if (!process.env.STRIPE_SECRET_KEY) {
+      return NextResponse.json(
+        { error: 'Configuration Stripe manquante' },
+        { status: 500 }
+      );
+    }
+
     const { amount, currency = 'eur', items } = await request.json();
 
     if (!amount || amount < 50) { // Minimum 50 centimes

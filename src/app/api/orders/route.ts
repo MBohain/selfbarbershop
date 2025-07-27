@@ -3,12 +3,23 @@ import prisma from '@/lib/prisma';
 import { aliExpressService } from '@/lib/aliexpress';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+// Vérification de la clé Stripe avec fallback pour le build
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY || 'sk_test_dummy_for_build';
+
+const stripe = new Stripe(stripeSecretKey, {
   apiVersion: '2025-06-30.basil',
 });
 
 export async function POST(request: NextRequest) {
   try {
+    // Vérifier que la vraie clé Stripe est disponible en runtime
+    if (!process.env.STRIPE_SECRET_KEY) {
+      return NextResponse.json(
+        { error: 'Configuration Stripe manquante' },
+        { status: 500 }
+      );
+    }
+
     // Vérifier si les paiements sont activés
     const paymentsEnabledSetting = await prisma.settings.findUnique({
       where: { key: 'payments_enabled' }
