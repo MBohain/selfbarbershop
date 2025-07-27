@@ -1,73 +1,114 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
+import jwt from 'jsonwebtoken';
+
+// Vérifier le token JWT
+function verifyToken(request: NextRequest) {
+  const authHeader = request.headers.get('authorization');
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return null;
+  }
+
+  const token = authHeader.substring(7);
+  try {
+    return jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+  } catch {
+    return null;
+  }
+}
 
 // Récupérer les produits en vedette pour l'admin
 export async function GET() {
   try {
-    // Pour le moment, récupérons tous les produits pour permettre la sélection
+    // Récupérer tous les produits avec leurs informations de featured
     const allProducts = await prisma.product.findMany({
+      include: {
+        category: true,
+      },
       orderBy: {
         name: 'asc',
       },
     });
 
-    // Simuler 3 produits en vedette pour l'instant
-    const featuredProducts = allProducts.slice(0, 3);
+    // Séparer les produits populaires des autres
+    const featuredProducts = allProducts
+      .filter(product => product.isFeatured)
+      .sort((a, b) => (a.featuredOrder || 999) - (b.featuredOrder || 999));
+
+    const availableProducts = allProducts.filter(product => !product.isFeatured);
 
     return NextResponse.json({
-      featured: featuredProducts,
-      available: allProducts,
+      success: true,
+      featured: featuredProducts.map(product => ({
+        ...product,
+        images: product.images ? JSON.parse(product.images) : [],
+        features: product.features ? JSON.parse(product.features) : []
+      })),
+      available: availableProducts.map(product => ({
+        ...product,
+        images: product.images ? JSON.parse(product.images) : [],
+        features: product.features ? JSON.parse(product.features) : []
+      })),
     });
   } catch (error) {
     console.error('Erreur lors de la récupération des produits en vedette:', error);
     return NextResponse.json(
-      { error: 'Erreur lors de la récupération des produits en vedette' },
+      { success: false, error: 'Erreur lors de la récupération des produits en vedette' },
       { status: 500 }
     );
   }
 }
 
-// Mettre à jour les produits en vedette (pour le moment, juste un mock)
+// Mettre à jour les produits en vedette
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    
-    // Si c'est l'ancien format (productId + position)
-    if (body.productId !== undefined) {
-      console.log('Gestion produit individuel:', body);
-      return NextResponse.json({ success: true });
+    // Vérifier l'authentification
+    const user = verifyToken(request);
+    if (!user) {
+      return NextResponse.json(
+        { success: false, error: 'Non autorisé' },
+        { status: 401 }
+      );
     }
-    
-    // Si c'est le nouveau format (liste de produits)
-    if (body.featuredProducts) {
-      console.log('Gestion liste produits:', body.featuredProducts);
-      
-      // Validation: maximum 3 produits
-      if (body.featuredProducts.length > 3) {
-        return NextResponse.json(
-          { error: 'Maximum 3 produits en vedette autorisés' },
-          { status: 400 }
-        );
-      }
 
-      // Pour le moment, on simule la sauvegarde
-      // TODO: Implémenter la vraie logique quand les champs seront disponibles
-      
-      return NextResponse.json({
-        success: true,
-        message: 'Produits en vedette mis à jour avec succès',
+    const { featuredProducts } = await request.json();
+    
+    // Validation: maximum 3 produits
+    if (featuredProducts.length > 3) {
+      return NextResponse.json(
+        { success: false, error: 'Maximum 3 produits en vedette autorisés' },
+        { status: 400 }
+      );
+    }
+
+    // Transaction pour mettre à jour les produits
+    await prisma.$transaction(async (tx) => {
+      // Réinitialiser tous les produits comme non-populaires
+      await tx.product.updateMany({
+        data: {
+          isFeatured: false,
+          featuredOrder: null,
+        },
       });
-    }
 
-    return NextResponse.json(
-      { error: 'Format de données invalide' },
-      { status: 400 }
-    );
+      // Mettre à jour les produits sélectionnés comme populaires
+      for (let i = 0; i < featuredProducts.length; i++) {
+        await tx.product.update({
+          where: { id: featuredProducts[i].id },
+          data: {
+            isFeatured: true,
+            featuredOrder: i + 1,
+          },
+        });
+      }
+    });
 
+    return NextResponse.json({ success: true });
+    
   } catch (error) {
-    console.error('Erreur gestion produits populaires:', error);
+    console.error('Erreur lors de la mise à jour des produits en vedette:', error);
     return NextResponse.json(
-      { success: false, error: 'Erreur serveur' },
+      { success: false, error: 'Erreur lors de la mise à jour des produits en vedette' },
       { status: 500 }
     );
   }

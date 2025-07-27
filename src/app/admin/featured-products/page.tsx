@@ -30,19 +30,11 @@ export default function FeaturedProductsAdmin() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('/api/admin/products');
+      const response = await fetch('/api/admin/products/featured');
       const data = await response.json();
       if (data.success) {
-        const allProducts = data.products.map((product: { id: string; name: string; price: number; originalPrice: number; images: string | string[]; category: { name: string; }; }) => ({
-          ...product,
-          images: typeof product.images === 'string' ? JSON.parse(product.images) : product.images || []
-        }));
-        setProducts(allProducts);
-        
-        const featured = allProducts
-          .filter((p: Product) => p.isFeatured)
-          .sort((a: Product, b: Product) => (a.featuredOrder || 999) - (b.featuredOrder || 999));
-        setFeaturedProducts(featured);
+        setFeaturedProducts(data.featured || []);
+        setProducts(data.available || []);
       }
     } catch (error) {
       console.error('Erreur chargement produits:', error);
@@ -51,46 +43,54 @@ export default function FeaturedProductsAdmin() {
     }
   };
 
-  const updateFeaturedProduct = async (productId: string, position: number | null) => {
+  const updateFeaturedProducts = async (newFeaturedProducts: Product[]) => {
     setUpdating(true);
     try {
+      const token = localStorage.getItem('adminToken');
       const response = await fetch('/api/admin/products/featured', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
-          productId,
-          position
+          featuredProducts: newFeaturedProducts
         }),
       });
 
       const data = await response.json();
       if (data.success) {
         await fetchProducts(); // Refresh data
+      } else {
+        alert(data.error || 'Erreur lors de la mise à jour');
       }
     } catch (error) {
-      console.error('Erreur mise à jour produit populaire:', error);
+      console.error('Erreur mise à jour produits populaires:', error);
+      alert('Erreur lors de la mise à jour');
     } finally {
       setUpdating(false);
     }
   };
 
   const removeFeaturedProduct = async (productId: string) => {
-    await updateFeaturedProduct(productId, null);
+    const newFeaturedProducts = featuredProducts.filter(p => p.id !== productId);
+    await updateFeaturedProducts(newFeaturedProducts);
   };
 
   const addFeaturedProduct = async (productId: string) => {
-    // Trouver la prochaine position disponible (1, 2, ou 3)
-    const usedPositions = featuredProducts.map(p => p.featuredOrder).filter(Boolean);
-    const nextPosition = [1, 2, 3].find(pos => !usedPositions.includes(pos));
-    
-    if (nextPosition && featuredProducts.length < 3) {
-      await updateFeaturedProduct(productId, nextPosition);
+    if (featuredProducts.length >= 3) {
+      alert('Maximum 3 produits populaires autorisés');
+      return;
     }
+
+    const productToAdd = products.find(p => p.id === productId);
+    if (!productToAdd) return;
+
+    const newFeaturedProducts = [...featuredProducts, productToAdd];
+    await updateFeaturedProducts(newFeaturedProducts);
   };
 
-  const availableProducts = products.filter(p => !p.isFeatured && p.isActive);
+  const availableProducts = products.filter(p => p.isActive !== false);
 
   if (isLoading) {
     return (

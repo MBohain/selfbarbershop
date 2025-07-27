@@ -8,7 +8,8 @@ import {
   PencilIcon, 
   TrashIcon,
   EyeIcon,
-  CogIcon
+  CogIcon,
+  StarIcon
 } from '@heroicons/react/24/outline';
 
 interface Product {
@@ -132,6 +133,13 @@ export default function AdminDashboard() {
               </p>
             </div>
             <div className="flex gap-4">
+              <button
+                onClick={() => router.push('/admin/featured-products')}
+                className="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
+              >
+                <StarIcon className="h-5 w-5" />
+                Produits Populaires
+              </button>
               <button
                 onClick={() => router.push('/admin/settings')}
                 className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
