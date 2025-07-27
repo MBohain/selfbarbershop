@@ -356,14 +356,14 @@ export default function SelfCutPage() {
                 <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-black rounded-full text-sm font-bold mb-6">
                   🏆 BEST-SELLER #1 - Plus de 10,000 clients satisfaits
                 </div>
-                <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white drop-shadow-lg">
                   Maîtrisez le Self-Cut comme un Pro
                 </h2>
-                <p className="text-xl lg:text-2xl mb-4 text-gray-100 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-xl lg:text-2xl mb-4 text-white max-w-3xl mx-auto leading-relaxed drop-shadow-md">
                   Le guide complet qui transforme n'importe qui en expert de la coupe à domicile
                 </p>
                 <div className="flex items-center justify-center gap-6 text-sm text-white font-medium">
-                  <div className="flex items-center bg-white bg-opacity-10 px-3 py-2 rounded-full">
+                  <div className="flex items-center bg-white bg-opacity-20 px-3 py-2 rounded-full backdrop-blur-sm border border-white border-opacity-30">
                     <StarIcon className="h-5 w-5 text-yellow-400 mr-1" />
                     <StarIcon className="h-5 w-5 text-yellow-400 mr-1" />
                     <StarIcon className="h-5 w-5 text-yellow-400 mr-1" />
@@ -371,7 +371,7 @@ export default function SelfCutPage() {
                     <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
                     4.9/5 (2,847 avis)
                   </div>
-                  <div className="bg-white bg-opacity-10 px-3 py-2 rounded-full">✓ Garantie satisfait ou remboursé 30 jours</div>
+                  <div className="bg-white bg-opacity-20 px-3 py-2 rounded-full backdrop-blur-sm border border-white border-opacity-30">✓ Garantie satisfait ou remboursé 30 jours</div>
                 </div>
               </div>
 
@@ -512,11 +512,13 @@ export default function SelfCutPage() {
               <div className="relative">
                 {/* Header with gradient */}
                 <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-8 text-white rounded-t-2xl">
+                  {/* Bouton de fermeture amélioré */}
                   <button
                     onClick={() => setShowGuideModal(false)}
-                    className="absolute top-6 right-6 text-white hover:text-gray-200 transition-colors"
+                    className="absolute top-4 right-4 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 text-white hover:text-gray-200 transition-all duration-200 backdrop-blur-sm border border-white border-opacity-30 shadow-lg z-10"
+                    aria-label="Fermer"
                   >
-                    <XMarkIcon className="h-8 w-8" />
+                    <XMarkIcon className="h-6 w-6" />
                   </button>
                   
                   <div className="text-center">
