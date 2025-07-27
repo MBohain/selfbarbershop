@@ -116,16 +116,6 @@ export default function LoginPage() {
               </div>
             )}
 
-            <div className="bg-blue-50 rounded-md p-4">
-              <div className="text-sm text-blue-700">
-                <strong>Compte de test :</strong>
-                <br />
-                Email : admin@selfbarbershoppro.fr
-                <br />
-                Mot de passe : admin123
-              </div>
-            </div>
-
             <div>
               <button
                 type="submit"
