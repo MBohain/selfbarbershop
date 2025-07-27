@@ -460,7 +460,7 @@ export default function SelfCutPage() {
                     </div>
                   </div>
 
-                  <div className="text-center text-sm text-white font-medium">
+                  <div className="text-center text-sm text-gray-800 font-medium">
                     <div className="flex items-center justify-center gap-4">
                       <span>🔒 Paiement 100% sécurisé</span>
                       <span>⚡ Téléchargement instantané</span>
@@ -471,7 +471,7 @@ export default function SelfCutPage() {
 
               {/* Testimonials */}
               <div className="mt-16 text-center">
-                <h3 className="text-2xl font-bold mb-8 text-white">Ce que disent nos clients</h3>
+                <h3 className="text-2xl font-bold mb-8 text-gray-800">Ce que disent nos clients</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-sm border border-white border-opacity-30 shadow-lg">
                     <div className="flex justify-center mb-3">
@@ -479,8 +479,8 @@ export default function SelfCutPage() {
                         <StarIcon key={i} className="h-5 w-5 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-sm text-white mb-3 font-medium">&quot;Incroyable ! J'ai économisé des centaines d'euros chez le coiffeur grâce à ce guide.&quot;</p>
-                    <div className="text-xs text-gray-100 font-semibold">- Marc L., Paris</div>
+                    <p className="text-sm text-gray-800 mb-3 font-medium">&quot;Incroyable ! J'ai économisé des centaines d'euros chez le coiffeur grâce à ce guide.&quot;</p>
+                    <div className="text-xs text-gray-700 font-semibold">- Marc L., Paris</div>
                   </div>
                   <div className="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-sm border border-white border-opacity-30 shadow-lg">
                     <div className="flex justify-center mb-3">
@@ -488,8 +488,8 @@ export default function SelfCutPage() {
                         <StarIcon key={i} className="h-5 w-5 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-sm text-white mb-3 font-medium">&quot;Les techniques sont clairement expliquées. Même ma femme me complimente maintenant !&quot;</p>
-                    <div className="text-xs text-gray-100 font-semibold">- Thomas K., Lyon</div>
+                    <p className="text-sm text-gray-800 mb-3 font-medium">&quot;Les techniques sont clairement expliquées. Même ma femme me complimente maintenant !&quot;</p>
+                    <div className="text-xs text-gray-700 font-semibold">- Thomas K., Lyon</div>
                   </div>
                   <div className="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-sm border border-white border-opacity-30 shadow-lg">
                     <div className="flex justify-center mb-3">
@@ -497,8 +497,8 @@ export default function SelfCutPage() {
                         <StarIcon key={i} className="h-5 w-5 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-sm text-white mb-3 font-medium">&quot;Le meilleur investissement que j'ai fait. ROI en 2 coupes seulement !&quot;</p>
-                    <div className="text-xs text-gray-100 font-semibold">- Julie M., Marseille</div>
+                    <p className="text-sm text-gray-800 mb-3 font-medium">&quot;Le meilleur investissement que j'ai fait. ROI en 2 coupes seulement !&quot;</p>
+                    <div className="text-xs text-gray-700 font-semibold">- Julie M., Marseille</div>
                   </div>
                 </div>
               </div>
