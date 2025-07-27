@@ -1,12 +1,12 @@
-import Navigation from &apos;@/components/Navigation&apos;;
-import Link from &apos;next/link&apos;;
+import Navigation from '@/components/Navigation';
+import Link from 'next/link';
 import { 
   TrashIcon, 
   MinusIcon, 
   PlusIcon,
   ShoppingBagIcon,
   LockClosedIcon 
-} from &apos;@heroicons/react/24/outline&apos;;
+} from '@heroicons/react/24/outline';
 
 // Simulation d&apos;un panier pour la démo
 const cartItems = [

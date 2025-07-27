@@ -1,10 +1,10 @@
-import Navigation from &apos;@/components/Navigation&apos;;
+import Navigation from '@/components/Navigation';
 import { 
   TruckIcon, 
   MapPinIcon, 
   ClockIcon,
   GiftIcon 
-} from &apos;@heroicons/react/24/outline&apos;;
+} from '@heroicons/react/24/outline';
 
 const shippingOptions = [
   {

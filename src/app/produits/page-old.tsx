@@ -1,7 +1,7 @@
-import Navigation from &apos;@/components/Navigation&apos;;
-import Link from &apos;next/link&apos;;
-import { StarIcon } from &apos;@heroicons/react/24/solid&apos;;
-import { HeartIcon, ShoppingCartIcon, FunnelIcon } from &apos;@heroicons/react/24/outline&apos;;
+import Navigation from '@/components/Navigation';
+import Link from 'next/link';
+import { StarIcon } from '@heroicons/react/24/solid';
+import { HeartIcon, ShoppingCartIcon, FunnelIcon } from '@heroicons/react/24/outline';
 
 const allProducts = [
   // Tondeuses

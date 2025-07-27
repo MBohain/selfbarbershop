@@ -1,5 +1,5 @@
-import Navigation from &apos;@/components/Navigation&apos;;
-import ShippingCalculator from &apos;@/components/ShippingCalculator&apos;;
+import Navigation from '@/components/Navigation';
+import ShippingCalculator from '@/components/ShippingCalculator';
 
 export default function TestShipping() {
   const testAmounts = [25, 45, 59.99, 60, 75, 100];
